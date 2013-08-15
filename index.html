@@ -1,0 +1,25 @@
+<html>
+<head>
+  <title>Conductor issue </title>
+</head>
+<body>
+  <script type="text/javascript" src="conductor.js.html"></script>
+  <script type='text/javascript'>
+
+  var conductor = new Conductor({
+    conductorURL: '/conductor.js.html'
+  });
+
+  var cardUrl = '/card.js';
+
+  conductor.loadData(cardUrl, '1', { metaData: {} });
+  var card = conductor.load(cardUrl, '1');
+
+  card.appendTo(document.body).promise.then(function() {
+    card.render();
+  });
+
+  </script>
+  <a href="http://www.google.com">Navigate away</a>
+</body>
+</hmtl>
